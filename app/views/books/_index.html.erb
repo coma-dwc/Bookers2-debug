@@ -19,31 +19,27 @@
         <td><%= book.body %></td>
 
         <!-- 以下いいね機能 -->
-        <td>
         <% if book.favorited_by?(current_user) %>
-            <p>
-              <%= link_to book_favorites_path(book), method: :delete do %>
-              ♥<%= book.favorites.count %>
-              <% end %>
-            </p>
-            <% else %>
-            <p>
-              <%= link_to book_favorites_path(book), method: :post do %>
-              ♡<%= book.favorites.count %>
-              <% end %>
-            </p>
+        <td>
+          <%= link_to book_favorites_path(book), method: :delete do %>
+          ♥<%= book.favorites.count %>
+          <% end %>
+        </td>
+        <% else %>
+        <td>
+          <%= link_to book_favorites_path(book), method: :post do %>
+          ♡<%= book.favorites.count %>
+          <% end %>
+          </td>
+          <% end %>
             <!-- ここまでいいね機能 -->
 
             <!-- 以下コメント機能 -->
-            <td>
-            <p>
+              <td>
               <%= link_to "コメント数：#{book.book_comments.count} ", book_path(book.id) %>
-            </p>
             </td>
             <!-- ここまでコメント機能 -->
 
-            <% end %>
-            </td>
       </tr>
     <% end %>
   </tbody>
