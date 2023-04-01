@@ -13,8 +13,10 @@
       <main>
         <p id="notice"><%= notice %></p>
         <% if user_signed_in? %>
+        <div class="col-md-6 offset-md-3">
         <%= render 'layouts/search' %>
         <% end %>
+        </div>
         <%= yield %>
       </main>
     <%= render 'layouts/footer' %>
