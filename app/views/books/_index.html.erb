@@ -19,10 +19,8 @@
         <td><%= book.body %></td>
 
         <!-- 以下いいね機能 -->
-
         <td id="favorite-btn_<%= book.id %>">
-        <%= render 'favorites/favorite-btn', book: book %>
-        </td>
+        <%= render 'favorites/favorite-btn', book: book %></td>
             <!-- ここまでいいね機能 -->
 
             <!-- 以下コメント機能 -->
@@ -31,7 +29,7 @@
             </td>
             <!-- ここまでコメント機能 -->
 
-      </tr>
+      <!--</tr>-->
     <% end %>
   </tbody>
 </table>

@@ -1,0 +1,5 @@
+<!-- books#show(book detail)の下のコメント投稿フォーム -->
+<%= form_with model:[book, book_comment], local: false do |f| %>
+            <%= f.text_area :comment, rows:'5' %>
+            <%= f.submit "送信" %>
+            <% end %>
