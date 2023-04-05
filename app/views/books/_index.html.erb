@@ -19,19 +19,10 @@
         <td><%= book.body %></td>
 
         <!-- 以下いいね機能 -->
-        <% if book.favorited_by?(current_user) %>
-        <td>
-          <%= link_to book_favorites_path(book), method: :delete do %>
-          ♥<%= book.favorites.count %>
-          <% end %>
+
+        <td id="favorite-btn_<%= book.id %>">
+        <%= render 'favorites/favorite-btn', book: book %>
         </td>
-        <% else %>
-        <td>
-          <%= link_to book_favorites_path(book), method: :post do %>
-          ♡<%= book.favorites.count %>
-          <% end %>
-          </td>
-          <% end %>
             <!-- ここまでいいね機能 -->
 
             <!-- 以下コメント機能 -->
