@@ -5,8 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :books, dependent: :destroy
+  has_many :group_users, dependent: :destroy
+  has_many :groups, through: :groupe_users
   has_many :favorites, dependent: :destroy
   has_many :book_comments, dependent: :destroy
+
 
   #フォローをした、されたの関係
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
@@ -43,7 +46,6 @@ class User < ApplicationRecord
       User.where('name LIKE ?', '%' + content + '%')
     end
   end
-
 
   has_one_attached :profile_image
 
